@@ -1,8 +1,9 @@
 class UdaciList
   include UdaciListErrors
+
   attr_reader :title, :items
 
-  EntryType = {
+  @@entry_type = {
       todo: "TodoItem",
       event: "EventItem",
       link: "LinkItem"
@@ -15,12 +16,16 @@ class UdaciList
 
   def add(type, description, options={})
     validate_entry(type)
-    model = EntryType[type.to_sym]
+    model = @@entry_type[type.to_sym]
     @items.push eval(model).new(description, options) if type == type.to_s
   end
 
   def delete(index)
-    @items.delete_at(index - 1)
+    if @items.length > index - 1
+      @items.delete_at(index - 1)
+    else
+      raise IndexExceedsListSize, "#{index} exceeds list size of #{@items.length}."
+    end
   end
 
   def all
@@ -32,9 +37,17 @@ class UdaciList
     end
   end
 
+  def filter(type)
+    type_class = type.capitalize + "Item"
+    @items.select { |item| puts item.description if item.class.to_s == type_class }
+  end
+
+  private
+
   def validate_entry(type)
-    unless EntryType.key?(type.downcase.to_sym)
+    unless @@entry_type.key?(type.downcase.to_sym)
       raise InvalidItemType, "#{type} is an invalid entry."
     end
  end
+
 end

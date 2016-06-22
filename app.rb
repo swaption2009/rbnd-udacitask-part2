@@ -31,18 +31,17 @@ new_list.add("event", "Vacation", start_date: "Dec 20", end_date: "Dec 30")
 new_list.add("event", "Life happens")
 new_list.add("link", "https://www.udacity.com/", site_name: "Udacity Homepage")
 new_list.add("link", "http://ruby-doc.org")
-#new_list.all
 
 # SHOULD RETURN ERROR MESSAGES
 # ----------------------------
-new_list.add("image", "http://ruby-doc.org") # Throws InvalidItemType error
+# new_list.add("image", "http://ruby-doc.org") # Throws InvalidItemType error
 # new_list.delete(9) # Throws an IndexExceedsListSize error
 # new_list.add("todo", "Hack some portals", priority: "super high") # throws an InvalidPriorityValue error
 
 # DISPLAY UNTITLED LIST
 # ---------------------
-# new_list.all
+new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-# new_list.filter("event")
+new_list.filter("event")

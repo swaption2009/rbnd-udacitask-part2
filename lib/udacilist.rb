@@ -1,4 +1,5 @@
 class UdaciList
+  include Listable
   include UdaciListErrors
 
   attr_reader :title, :items
@@ -25,15 +26,6 @@ class UdaciList
       @items.delete_at(index - 1)
     else
       raise IndexExceedsListSize, "#{index} exceeds list size of #{@items.length}."
-    end
-  end
-
-  def all
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
-    @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
     end
   end
 

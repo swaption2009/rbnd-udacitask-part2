@@ -25,7 +25,7 @@ class UdaciList
     if @items.length > index - 1
       @items.delete_at(index - 1)
     else
-      raise IndexExceedsListSize, "#{index} exceeds list size of #{@items.length}."
+      raise UdaciListErrors::IndexExceedsListSize, "#{index} exceeds list size of #{@items.length}."
     end
   end
 
@@ -38,7 +38,7 @@ class UdaciList
 
   def validate_entry(type)
     unless @@entry_type.key?(type.downcase.to_sym)
-      raise InvalidItemType, "#{type} is an invalid entry."
+      raise UdaciListErrors::InvalidItemType, "#{type} is an invalid entry."
     end
  end
 

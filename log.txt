@@ -1,0 +1,110 @@
+commit 8cc0b821b77075f43ee33c4f46a0f966888fe5a7
+Author: swaption2009 <swaption2009@gmail.com>
+Date:   Wed Jun 22 17:04:04 2016 -0700
+
+    final tasks
+    
+    *** need to add Google Translate API key
+    (/lib/google_translate_api_key.rb ***
+    
+    - add gem ‘easy_translate’
+    - add 2 new features
+    - create reflection
+
+commit e52c7ce71a3ce236e2eee78038d3435cf9a4ff7e
+Author: swaption2009 <swaption2009@gmail.com>
+Date:   Wed Jun 22 14:57:08 2016 -0700
+
+    colorize and other fixes
+    
+    - colorize
+    - remove duplicate codes
+    - use module :: call
+
+commit bbc1583cdc6e1ba494192346fbdfd8031d044f1e
+Author: swaption2009 <swaption2009@gmail.com>
+Date:   Tue Jun 21 22:12:12 2016 -0700
+
+    refactor formatting to Listable module
+    
+    - add case..when..end for 3 listing types formatting
+
+commit 91b5734a51e81343149856d56c3e392c5ac5a502
+Author: swaption2009 <swaption2009@gmail.com>
+Date:   Tue Jun 21 20:01:23 2016 -0700
+
+    complete app.rb tasks
+
+commit 661b3a1310d8419c6cc2238c1f318f0f958e129b
+Author: swaption2009 <swaption2009@gmail.com>
+Date:   Tue Jun 21 12:37:32 2016 -0700
+
+    refactor udacilist.rb
+    
+    - create EntryType hash
+    - add validate_entry and raise error
+    - refactor add method to a single line
+
+commit fa1acc1f80fa7645135926a21dadc3bb4e753934
+Author: swaption2009 <swaption2009@gmail.com>
+Date:   Tue Jun 21 11:13:43 2016 -0700
+
+    use chronic to parse date
+
+commit 45b0844b650ab31fead28be3b0b8a88e484a6d20
+Author: swaption2009 <swaption2009@gmail.com>
+Date:   Mon Jun 20 23:26:58 2016 -0700
+
+    add gems and include Listable module
+    
+    - bundle chronic and colorize gems
+    - refactor format_description and include Listable module
+    - add default value for new_list name
+
+commit 9c9a6c680db333d2ce9a79f8bab58f578a14f52e
+Author: Jerome Chenette <jerome.chenette@gmail.com>
+Date:   Thu Apr 7 11:56:04 2016 -0700
+
+    New Rubric linked
+
+commit 68aab52057d8e55093ba1d8bb6bffb6e101d7392
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Thu Jan 14 16:33:03 2016 -0800
+
+    Updated README to clarify feature requirements
+
+commit 44c0ac9bbf25cfcb0fb2804df173024272b22079
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Wed Jan 13 13:15:43 2016 -0800
+
+    Change filter method requirement
+
+commit ff315acad10f611b79aaedfec65b11aef55a6378
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Wed Jan 13 11:52:22 2016 -0800
+
+    Add clarification about filter method
+
+commit ee74dea2ba39e201720aca9c29380f920a268600
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 16:32:37 2016 -0800
+
+    Add filter by item type demo to starter code
+
+commit 154160cf3b7ff1a29f5ef8e987a219852cac0f12
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 11:09:40 2016 -0800
+
+    Add links for gem sources
+
+commit 6c365dc917cd32a5e8c520160ec58198cc8cb6d1
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 11:06:54 2016 -0800
+
+    Add rubric link
+
+commit ad33c7f02fec47e51c72da5cde3f8032f7b8a111
+Author: Julia Van Cleve <julia@jmv.me>
+Date:   Tue Jan 12 10:58:34 2016 -0800
+
+    Initial commit

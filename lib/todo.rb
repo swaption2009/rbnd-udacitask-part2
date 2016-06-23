@@ -11,6 +11,7 @@ class TodoItem
     @description = description
     @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     validate_priority(options[:priority])
+    @status = options[:status] || false
   end
 
   private

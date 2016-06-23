@@ -18,7 +18,10 @@ class UdaciList
   def add(type, description, options={})
     validate_entry(type)
     model = @@entry_type[type.to_sym]
-    @items.push eval(model).new(description, options) if type == type.to_s
+    # translate entry to Spanish language using gem 'easy_translate'
+    load_google_translate_api_key
+    description_translation = EasyTranslate.translate(description, :to => :es)
+    @items.push eval(model).new(description_translation, options) if type == type.to_s
   end
 
   def delete(index)
@@ -32,6 +35,10 @@ class UdaciList
   def filter(type)
     type_class = type.capitalize + "Item"
     @items.select { |item| puts item.description if item.class.to_s == type_class }
+  end
+
+  def sort_by_name
+    obj = @items.sort! { |a,b| a.description.downcase <=> b.description.downcase }
   end
 
   private

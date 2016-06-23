@@ -1,18 +1,17 @@
 module Listable
   def format_description
-    "#{@description}".ljust(25)
+    "#{@description}".ljust(35)
   end
 
   def print_data(position, item)
     puts "#{position + 1}) #{item.details}"
   end
 
-  def all
+  def all(obj = @items)
     puts "-".blue * @title.length
     puts @title.blue
-
     puts "-".blue * @title.length
-    @items.each_with_index do |item, position|
+    obj.each_with_index do |item, position|
       case item.class.to_s
         when "TodoItem"
           def format_date
@@ -25,10 +24,13 @@ module Listable
             value = "" if !@priority
             return value
           end
+          def format_status
+            @status ? "Done" : "Not Yet Done"
+          end
           def details
             format_description.colorize(:green) + "due: " +
             format_date.colorize(:yellow) +
-            format_priority
+            format_priority.ljust(20) + format_status
           end
           print_data(position, item)
 

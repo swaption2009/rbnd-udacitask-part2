@@ -1,6 +1,6 @@
 require 'chronic'
 require 'colorize'
-# Find a third gem of your choice and add it to your project
+require 'easy_translate' # Find a third gem of your choice and add it to your project
 require 'date'
 require_relative "lib/listable"
 require_relative "lib/errors"
@@ -8,6 +8,7 @@ require_relative "lib/udacilist"
 require_relative "lib/todo"
 require_relative "lib/event"
 require_relative "lib/link"
+require_relative "lib/google_translate_api_key"
 
 list = UdaciList.new(title: "Julia's Stuff")
 list.add("todo", "Buy more cat food", due: "2016-02-03", priority: "low")
@@ -44,4 +45,18 @@ new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
+puts "Demo filter by item type".colorize(:red)
 new_list.filter("event")
+
+# FEATURE 1: Sort list by description
+# -----------------------------------
+puts "Feature 1: sort list by description".colorize(:red)
+obj1 = list.sort_by_name
+new_list.all(obj1)
+obj2 = new_list.sort_by_name
+list.all(obj2)
+
+# FEATURE 2: Add to-do status with "not done" as default value
+# ------------------------------------------------------------
+list.add("todo", "Sweep floors", due: "2016-01-30", status: true)
+list.all
